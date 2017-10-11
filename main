@@ -1,1 +1,31 @@
-#include <stdio.h>
+/* Leer diez numeros del usuario, los almacene en un arrelo y los ordene de mayor a menor */
+
+#include <iostream>
+
+int main(int argc, char** argv) {
+	int numeros[10], aux;
+	for(int i=0; i<10; i++){
+		printf("Introduce el numero %d  ", i+1);
+		scanf("%d", &numeros[i]);
+	}
+	
+	/*for(int i=0; i<10; i++){
+		printf("El numero %d es %d \n", i+1, numeros[i]);
+	}*/
+	
+	for(int j=0; j<10; j++){
+		for(int i=0; i<10; i++){
+			if(numeros[i]>numeros[i+1]){
+				aux=numeros[i+1];
+				numeros[i+1]=numeros[i];
+				numeros[i]=aux;
+			}
+		}
+	}
+	
+	for(int i=0; i<10; i++){
+		printf("El numero %d es %d \n", i+1, numeros[i]);
+	}
+	
+	return 0;
+}
